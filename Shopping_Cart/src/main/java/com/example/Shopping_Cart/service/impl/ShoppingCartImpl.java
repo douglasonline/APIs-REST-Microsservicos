@@ -77,6 +77,22 @@ public class ShoppingCartImpl implements ShoppingCartService {
 
     }
 
+    @Override
+    public ShoppingCart update(Long id, ShoppingCart shoppingCart) {
+
+        ShoppingCart existingShoppingCart = shoppingCartRepository.findById(id).orElseThrow(() -> new NoSuchElementException("Produto não encontrado com o ID: " + id));
+
+        if (shoppingCart != null)  {
+
+            existingShoppingCart.setItems(shoppingCart.getItems());
+            existingShoppingCart.setTotalPrice(shoppingCart.getTotalPrice());
+
+        }
+
+        return shoppingCartRepository.save(existingShoppingCart);
+
+    }
+
 
     @Override
     public ShoppingCart create(ShoppingCart shoppingCart, String token) {

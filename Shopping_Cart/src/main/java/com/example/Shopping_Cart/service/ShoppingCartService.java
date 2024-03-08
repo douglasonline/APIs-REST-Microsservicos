@@ -15,4 +15,6 @@ public interface ShoppingCartService  {
 
       void removeItemsFromShoppingCart(Long shoppingCartId, String token);
 
+      ShoppingCart update(Long id, ShoppingCart shoppingCart);
+
 }

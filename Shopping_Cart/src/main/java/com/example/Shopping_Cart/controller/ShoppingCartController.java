@@ -33,6 +33,21 @@ public class ShoppingCartController {
         }
     }
 
+    @Operation(summary = "Update a shopping cart by ID")
+    @PutMapping("/{id}")
+    @ApiResponse(responseCode = "200", description = "Shopping Cart updated")
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody ShoppingCart shoppingCart) {
+        try {
+            ShoppingCart shoppingCart1 = shoppingCartService.update(id, shoppingCart);
+            return ResponseEntity.ok(shoppingCart1);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar produto: " + e.getMessage());
+        }
+
+    }
+
 
     @PostMapping("/addItem")
     public ResponseEntity<?> addItemToCart(@RequestBody ShoppingCart shoppingCart, @RequestHeader("Authorization") String token) {

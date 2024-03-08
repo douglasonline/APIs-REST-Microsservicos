@@ -22,6 +22,8 @@
 
 - Para ver todos os itens no carrinho de compras não e necessário que o usuário esteja logado no Microsserviço de usuário (User).
 
+- Para editar um um item no carrinho de compras e necessário que o usuário esteja logado no Microsserviço de usuário (User).
+
 ## Microsserviço de Pagamento (Payment): Gerencia o processo de pagamento. 
 
 - Para realizar a simulação de um pagamento e necessário que o usuário esteja logado no Microsserviço de usuário (User), para poder passar o Token e também e necessário passar o id do item que está no carrinho de compras por que o Microsserviço de pagamento (Payment), faz a comunicação com o Microsserviço de Carrinho de compras (Shopping_Cart), para poder finalizar a simulação do pagamento. 
@@ -79,12 +81,12 @@ Pré-requisitos: Java, Maven, RabbitMQ
 ![Microsservico de Produto Swagger Parte2](https://github.com/douglasonline/Imagens/blob/master/Microsservico_de_Produto_Swagger_Parte2.png)
 
 ## Para acessar o Swagger do Microsserviço de Carrinho de Compras após executar o projeto acesse o endereço 
-- http://localhost:8082/swagger-ui/index.html#/
+- http://localhost:8081/swagger-ui/index.html#/
 
 ![Microsservico de Carrinho de Compras Swagger](https://github.com/douglasonline/Imagens/blob/master/Microsservico_de_Carrinho_de_Compras_Swagger.png) 
 
 ## Para acessar o Swagger do Microsserviço de Pagamento após executar o projeto acesse o endereço 
-- http://localhost:8082/swagger-ui/index.html#/
+- http://localhost:8083/swagger-ui/index.html#/
 
 ![Microsservico de Pagamento Swagger](https://github.com/douglasonline/Imagens/blob/master/Microsservico_de_Pagamento_Swagger.png)  
 
